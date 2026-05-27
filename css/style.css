@@ -514,12 +514,20 @@ img {
 }
 
 .hero-sub {
-  font-size: 1.2rem;
-  letter-spacing: 5px;
+  font-size: 0.9rem;
+  letter-spacing: 6px;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--gold-primary);
   margin-bottom: 16px;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.hero-sub strong {
+  font-size: 1.3rem;
+  font-weight: 850;
+  color: var(--text-primary);
+  letter-spacing: 4px;
+  margin-left: 6px;
 }
 
 .hero-motto {
@@ -1446,5 +1454,15 @@ img {
 @media (min-width: 1280px) {
   .collection-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ensure trust, quality, service headline is on a single line in mobile view */
+@media (max-width: 767px) {
+  .hero-motto {
+    font-size: 0.65rem !important;
+    letter-spacing: 4px !important;
+    white-space: nowrap !important;
+    margin-bottom: 32px !important;
   }
 }
