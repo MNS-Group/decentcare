@@ -1,0 +1,7 @@
+# Ignore scratch directory used for image downloads and local testing
+scratch/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
