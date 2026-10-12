@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const servicesContainer = document.getElementById('servicesGrid');
   const teakwoodListContainer = document.getElementById('teakwoodList');
   const teakwoodOriginText = document.getElementById('teakwoodOriginText');
-  const testimonialsContainer = document.getElementById('testimonialsGrid');
   
   // Modals
   const detailsModal = document.getElementById('detailsModal');
@@ -157,8 +156,17 @@ document.addEventListener('DOMContentLoaded', () => {
       };
     }
     
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `${item.title} - ${item.subtitle}`);
     card.addEventListener('click', () => {
       navigateToCollection(item.id);
+    });
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        navigateToCollection(item.id);
+      }
     });
     
     return card;
@@ -199,35 +207,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Render Testimonials List
-  function renderTestimonials() {
-    if (!testimonialsContainer) return;
-    testimonialsContainer.innerHTML = '';
-    
-    DATA.testimonials.forEach(test => {
-      const card = document.createElement('div');
-      card.className = 'testimonial-card glass-panel reveal-text';
-      
-      const starsHTML = '★'.repeat(test.stars) + '☆'.repeat(5 - test.stars);
-      
-      card.innerHTML = `
-        <div class="testimonial-stars">${starsHTML}</div>
-        <p>"${test.text}"</p>
-        <div class="testimonial-meta">
-          <span class="testimonial-author">— ${test.author}</span>
-          <span class="testimonial-loc">${test.location}</span>
-        </div>
-      `;
-      testimonialsContainer.appendChild(card);
-    });
-  }
-
   // Initial Data Mapping
   renderNewlyLaunched();
   renderAllCollections();
   renderTeakwood();
   renderServices();
-  renderTestimonials();
 
   // ==========================================
   // D. DETAILED COLLECTION INTERACTIVE MODAL
@@ -343,9 +327,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "dining-tables": "dining.html",
     "dressing-tables": "dressing.html",
     "deewan": "deewan.html",
-    "pooja-mandir": "pooja.html",
     "office-furniture": "office.html",
     "shoe-racks": "shoe-racks.html",
+    "gas-cabinets": "gas-cabinets.html",
     "curtains": "curtains.html"
   };
 

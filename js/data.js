@@ -17,13 +17,13 @@ const DECENT_CARE_DATA = {
   },
   
   contact: {
-    phone: "+91 849 8833 736",
+    phone: "+91 84988 33736",
     phoneRaw: "+918498833736",
     whatsappLink: "https://wa.me/918498833736",
     email: "decentcareworld@gmail.com",
     website: "www.decentcare.in",
-    youtube: "https://youtube.com/@decentcareworld?si=XTwAGImBuX2Zoiq3",
-    instagram: "https://www.instagram.com/decentcarefurniture?igsh=MXQwNms1bzM4Y2w5eQ==",
+    youtube: "https://youtube.com/@decentcarefurniture",
+    instagram: "https://instagram.com/decentcarefurniture",
     address: "Hyderabad, Telangana, India"
   },
 
@@ -33,45 +33,37 @@ const DECENT_CARE_DATA = {
     text: "Special Supreme TEAKWOOD Furniture sourced from elite reserves. Highly durable, natural golden grains, and immune to moisture & termites.",
     items: [
       "Teakwood Bed Sets",
-      "Dining Tables",
-      "Classic Sofa Sets",
-      "Luxury Dressing Tables",
-      "Grand Deewans",
-      "Durable Shoe Racks"
+      "Teakwood Dining Tables",
+      "Teakwood Sofa Sets",
+      "Teakwood Dressing Tables",
+      "Teakwood Diwans"
     ]
   },
 
   services: [
     {
       id: "mesh-door",
-      title: "Mesh Door",
-      description: "Heavy-duty magnetic and slider mesh door installations tailored directly at your doorstep.",
-      icon: "🚪",
+      title: "Mesh Doors & Windows",
+      description: "Mesh door and window installation at your doorstep (in Hyderabad).",
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 9h16M4 15h16M10 3v18M16 3v18"/></svg>',
       image: "images/interior/mesh-door-01.webp"
     },
     {
-      id: "gas-stove",
-      title: "Gas Stove & Chimney",
-      description: "Professional multi-burner gas stove and modern exhaust chimney installation, maintenance, & repair.",
-      icon: "🔥",
-      image: "images/interior/gas-stove-01.webp"
-    },
-    {
       id: "cloth-hangers",
-      title: "Cloth Hangers",
-      description: "Ceiling-pulley operated anti-rust stainless steel cloth drying hangers perfectly suited for balconies.",
-      icon: "🧺",
+      title: "Stainless Steel Cloth Hangers",
+      description: "Stainless steel cloth hangers installed at your doorstep (in Hyderabad).",
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V6.5A2.5 2.5 0 1 0 9.5 4"/><path d="M12 8l9 7H3l9-7z"/></svg>',
       image: "images/interior/cloth-hangers-01.webp"
     },
     {
       id: "interior-works",
       title: "Complete Interior Works",
-      description: "Full-scale luxury home interior modeling, modular kitchen layouts, false ceilings, and smart space planning.",
-      icon: "🏛️",
+      description: "Complete interior works with the latest technology at your doorstep.",
+      icon: '<svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></svg>',
       image: "images/interior/interior-work-01.webp"
     }
   ],
-  
+
   collections: [
     {
       id: "sofa-sets",
@@ -81,8 +73,8 @@ const DECENT_CARE_DATA = {
       description: "Luxurious handcrafted sofa sets customized to your precise living room blueprints. Choose from premium velvets, linen, or high-end Italian leatherette.",
       features: [
         "100+ bespoke contemporary & classic designs",
-        "Fully customizable configurations (L-shape, 3+2+1, U-shape)",
-        "Premium solid wood heavy framing with structural lifetime guarantee",
+        "Modular, L-shape, U-shape and 3+1+1 configurations, fully customized",
+        "Premium solid wood heavy framing",
         "High-density 40-Recron cushion foam padding",
         "Gold-plated or solid oak aesthetic legs"
       ],
@@ -209,8 +201,7 @@ const DECENT_CARE_DATA = {
       newlyLaunched: false,
       gallery: [
         "images/dressing/dressing-table-led-01.webp",
-        "images/dressing/dressing-table-led-02.webp",
-        "images/dressing/dressing-table-with-stool-01.webp"
+        "images/dressing/dressing-table-led-02.webp"
       ]
     },
     {
@@ -231,26 +222,6 @@ const DECENT_CARE_DATA = {
         "images/deewan/deewan-with-storage-01.webp",
         "images/deewan/deewan-design-01.webp",
         "images/deewan/deewan-design-02.webp"
-      ]
-    },
-    {
-      id: "pooja-mandir",
-      title: "Pooja Mandir",
-      subtitle: "With Gopuram carvings",
-      image: "images/pooja/pooja-mandir-gopuram-01.webp",
-      description: "A sacred sanctuary handcrafted with love and utmost spiritual respect. Built in heavy-grade Teakwood with exquisite floral & deity engravings.",
-      features: [
-        "Stately hand-sculpted Gopuram domes (traditional temple style)",
-        "Premium drawer slides and pull-out trays for incense & lights",
-        "Concealed wiring paths with integrated focus downlights",
-        "Heavy bells made of pure hand-polished solid brass",
-        "Spacious pedestal boxes for spiritual books & articles"
-      ],
-      newlyLaunched: true,
-      gallery: [
-        "images/pooja/pooja-mandir-gopuram-01.webp",
-        "images/pooja/pooja-mandir-01.webp",
-        "images/pooja/pooja-mandir-02.webp"
       ]
     },
     {
@@ -275,22 +246,39 @@ const DECENT_CARE_DATA = {
     },
     {
       id: "shoe-racks",
-      title: "Shoe Racks",
-      subtitle: "With Ventilated Cupboards",
-      image: "images/shoe-rack/shoe-rack-cupboard-01.webp",
-      description: "Elegant storage wardrobes that prevent entrance clutter. Includes ventilated louvers or decorative grilles to ensure steady interior airflow.",
+      title: "Footwear Cabinets",
+      subtitle: "With Extra Cupboards",
+      image: "images/shoe-rack/footwear-cabinet-01.webp",
+      description: "Footwear cabinets with extra cupboards for your entryway. Ventilated doors, lockable cupboards and an optional cushioned seat unit, made to your size.",
       features: [
-        "Ventilated door design prevents interior humidity and odors",
-        "Height-adjustable shelving supports high boots and flat sneakers",
-        "Top-grain leather upholstered seat cushioning for ease of wear",
-        "Small integrated drawers for keys, shoe horns, and polish kits",
-        "Wall-anchored safety mechanisms with minimal foot space footprints"
+        "Footwear cabinet with extra cupboards",
+        "Ventilation grilles on the doors for airflow",
+        "Lockable doors",
+        "Cushioned seat unit with storage cupboard (as shown)",
+        "Fully customized to your space"
       ],
       newlyLaunched: false,
       gallery: [
+        "images/shoe-rack/footwear-cabinet-01.webp",
         "images/shoe-rack/shoe-rack-cupboard-01.webp",
-        "images/shoe-rack/shoe-rack-design-01.webp",
-        "images/shoe-rack/shoe-rack-design-02.webp"
+        "images/shoe-rack/shoe-rack-design-01.webp"
+      ]
+    },
+    {
+      id: "gas-cabinets",
+      title: "Gas Cylinder Cabinets",
+      subtitle: "Ventilated & Lockable",
+      image: "images/gas-cabinet/gas-cylinder-cabinet-01.webp",
+      description: "A wooden cabinet that keeps your gas cylinder out of sight. Double doors with a lock and a ventilation grille on the side, made to your size.",
+      features: [
+        "Double doors with lock",
+        "Ventilation grille on the side panel",
+        "Raised on legs",
+        "Fully customized to your space"
+      ],
+      newlyLaunched: false,
+      gallery: [
+        "images/gas-cabinet/gas-cylinder-cabinet-01.webp"
       ]
     },
     {
@@ -312,27 +300,6 @@ const DECENT_CARE_DATA = {
         "images/curtains/curtain-interior-01.webp",
         "images/curtains/curtain-interior-02.webp"
       ]
-    }
-  ],
-
-  testimonials: [
-    {
-      stars: 5,
-      text: "Exceptional quality! The supreme teakwood dining set is absolutely gorgeous and stands as the heart of our dining area. Highly recommend Decent Care for premium customized furniture.",
-      author: "Rajesh K.",
-      location: "Hyderabad"
-    },
-    {
-      stars: 5,
-      text: "We got our complete home interior done. Professional design team, exact on-time delivery, and the finish is premium and ultra-luxury. The smart modular kitchen works like a charm.",
-      author: "Priya S.",
-      location: "Secunderabad"
-    },
-    {
-      stars: 5,
-      text: "The custom L-shaped sofa set is incredibly comfortable and matches our living room vibes perfectly. The 360-swivel recliners are an absolute crowd-favorite. Top class!",
-      author: "Anil M.",
-      location: "Hyderabad"
     }
   ]
 };

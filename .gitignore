@@ -5,3 +5,7 @@ scratch/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Untouched, un-watermarked originals. Local only: re-create from git history
+# (commit before "watermark") or the client's files. Input for tools/build_images.py
+source-images/

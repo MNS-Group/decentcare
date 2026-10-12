@@ -1,3 +1,5 @@
+> **Watermark & conversion:** see `IMAGE-STATUS.md`. Photos are built from `source-images/` by `tools/build_images.py`.
+
 # Decent Care Website — Image Guide
 
 > Add your actual product images into the `images/` subfolders below.
@@ -40,6 +42,11 @@
 | `modern-teapoy-wooden-01.webp` | Wooden carved teapoy | Modern wooden teapoy table |
 | `modern-teapoy-02.webp` | Another teapoy design | Latest modern teapoy design |
 
+### `images/gas-cabinet/` — Gas Cylinder Cabinets
+| File Name | Description |
+|-----------|-------------|
+| `gas-cylinder-cabinet-01.webp` | Gas cylinder cabinet |
+
 ### `images/dressing/` — Dressing Tables
 | File Name | Description | Alt Text |
 |-----------|-------------|----------|
@@ -53,12 +60,6 @@
 | `deewan-with-storage-01.webp` | Deewan showing storage | Deewan with storage compartment |
 | `deewan-design-01.webp` | Another deewan design | Premium deewan daybed design |
 
-### `images/pooja/` — Pooja Mandir
-| File Name | Description | Alt Text |
-|-----------|-------------|----------|
-| `pooja-mandir-gopuram-01.webp` | Mandir with gopuram (full view) | Pooja mandir with traditional gopuram design |
-| `pooja-mandir-01.webp` | Another mandir design | Wooden pooja mandir for home |
-
 ### `images/office/` — Office Furniture
 | File Name | Description | Alt Text |
 |-----------|-------------|----------|
@@ -66,7 +67,7 @@
 | `revolving-chair-01.webp` | Revolving chair | Ergonomic revolving chair for office |
 | `office-table-chair-set-01.webp` | Table + chair together | Office table and revolving chair set |
 
-### `images/shoe-rack/` — Shoe Racks
+### `images/shoe-rack/` — Footwear Cabinets
 | File Name | Description | Alt Text |
 |-----------|-------------|----------|
 | `shoe-rack-cupboard-01.webp` | Shoe rack with cupboard doors | Shoe rack with cupboard storage |
