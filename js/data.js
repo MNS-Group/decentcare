@@ -188,20 +188,18 @@ const DECENT_CARE_DATA = {
     {
       id: "dressing-tables",
       title: "Dressing Tables",
-      subtitle: "With Stool & LED Mirror",
+      subtitle: "50+ Collections",
       image: "images/dressing/dressing-table-led-01.webp",
-      description: "Your personalized preparation stage. Sleek wooden dressing dressers complete with matching stools, ample cosmetic storage, and touch-sensing LED mirrors.",
+      description: "Dressing tables with a mirror, open shelves, a drawer and cupboards, made to your space. LED mirror designs available.",
       features: [
-        "Touch mirror featuring variable warm, neutral, and cold LED colors",
-        "Sliding hidden jewelry cabinets behind dynamic vanity doors",
-        "Custom velvet-lined organizer slot compartments",
-        "Comfortable matching gold-base vanity stool included",
-        "Compact floating and space-conscious premium styles"
+        "50+ collections",
+        "LED mirror designs available",
+        "Mirror, open shelves, drawer and cupboards (as shown)",
+        "Fully customized to your space"
       ],
       newlyLaunched: false,
       gallery: [
-        "images/dressing/dressing-table-led-01.webp",
-        "images/dressing/dressing-table-led-02.webp"
+        "images/dressing/dressing-table-led-01.webp"
       ]
     },
     {

@@ -36,8 +36,22 @@ INSPIRATION = {
     "sofas/kids-sofa-01": 0.58, "sofas/recliner-sofa-03": 0.55,
     "dining/premium-marble-dining-table-01": 0.63, "dining/teakwood-dining-table-01": 0.69,
 }
+# Photos shown whole: the 4:3 frame is filled by a blurred copy of the photo instead of cropping.
+PAD = {"dressing/dressing-table-led-01"}
+SMALL_WIDTH = 640   # card thumbnails written next to each photo as <name>-sm.webp
 # Client-supplied photos that need a crop (watermarked as usual).
 FOCUS = {"deewan/premium-teakwood-deewan-01": 0.5}
+
+
+def pad_43(img):
+    """Fit the whole photo inside a 4:3 canvas; the sides are a blurred, darkened copy."""
+    from PIL import ImageFilter, ImageEnhance
+    w, h = img.size
+    cw, ch = (round(h * 4 / 3), h) if w / h < 4 / 3 else (w, round(w * 3 / 4))
+    bg = img.resize((cw, ch), Image.LANCZOS).filter(ImageFilter.GaussianBlur(28))
+    bg = ImageEnhance.Brightness(bg).enhance(0.75)
+    bg.paste(img, ((cw - w) // 2, (ch - h) // 2))
+    return bg
 
 
 def crop_43(img, focus):
@@ -97,8 +111,10 @@ def main():
         out.parent.mkdir(parents=True, exist_ok=True)
         img = Image.open(src).convert("RGB")
         key = str(rel.with_suffix(""))
-        stamp = mark and rel.parts[0] not in SKIP_DIRS and key not in INSPIRATION
-        if key in INSPIRATION or key in FOCUS:
+        stamp = mark and rel.parts[0] not in SKIP_DIRS | {"hero"} and key not in INSPIRATION
+        if key in PAD:
+            img = pad_43(img)
+        elif key in INSPIRATION or key in FOCUS:
             img = crop_43(img, INSPIRATION.get(key, FOCUS.get(key)))
         if img.width > MAX_WIDTH:
             img = img.resize((MAX_WIDTH, round(img.height * MAX_WIDTH / img.width)), Image.LANCZOS)
@@ -108,6 +124,9 @@ def main():
             img = img.resize((128, 128), Image.LANCZOS)
         img.save(out, "WEBP", quality=QUALITY, method=6)
         n += 1
+        if rel.parts[0] not in SKIP_DIRS | {"hero", "gallery"}:
+            sm = img.resize((SMALL_WIDTH, round(img.height * SMALL_WIDTH / img.width)), Image.LANCZOS)
+            sm.save(out.with_name(out.stem + "-sm.webp"), "WEBP", quality=74, method=6)
     print(f"built {n} images")
 
 

@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollTopFloat = document.getElementById('scrollTopBtn');
   
   // Containers
-  const newlyLaunchedContainer = document.getElementById('newlyLaunchedGrid');
   const collectionsContainer = document.getElementById('collectionsGrid');
   const servicesContainer = document.getElementById('servicesGrid');
   const teakwoodListContainer = document.getElementById('teakwoodList');
@@ -105,18 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // C. DYNAMIC RENDER LOGIC FROM JSON STORE
   // ==========================================
 
-  // Render Newly Launched spotlight
-  function renderNewlyLaunched() {
-    if (!newlyLaunchedContainer) return;
-    newlyLaunchedContainer.innerHTML = '';
-    const newItems = DATA.collections.filter(item => item.newlyLaunched);
-    
-    newItems.forEach(item => {
-      const card = createCollectionCard(item, true);
-      newlyLaunchedContainer.appendChild(card);
-    });
-  }
-
   // Render All Collections
   function renderAllCollections() {
     if (!collectionsContainer) return;
@@ -136,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     card.innerHTML = `
       <div class="card-img">
-        <img src="${item.image}" alt="${item.title} - ${item.subtitle}" loading="lazy">
+        <img src="${item.image.replace('.webp', '-sm.webp')}" alt="${item.title} - ${item.subtitle}" loading="lazy" decoding="async" width="640" height="480">
       </div>
       <div class="card-body">
         <div class="card-header-line">
@@ -208,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Initial Data Mapping
-  renderNewlyLaunched();
   renderAllCollections();
   renderTeakwood();
   renderServices();
