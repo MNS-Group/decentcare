@@ -21,6 +21,34 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC, OUT = ROOT / "source-images", ROOT / "images"
 SKIP_DIRS = {"logo", "testimonials"}
 TEXT = "DECENT CARE"
+MAX_WIDTH = 1400
+
+# Per-photo settings, keyed by "<folder>/<name>".
+#   focus  - for photos that are not 4:3: crop to 4:3 around this point (0 top .. 1 bottom,
+#            or left .. right for wide photos) so the furniture stays in the frame.
+#   mark   - False = no watermark.
+# INSPIRATION photos are temporary stand-ins found online: no watermark. When the client's
+# own photo replaces one, delete its line here and the watermark is added automatically.
+INSPIRATION = {
+    "sofas/premium-sofa-set-01": 0.60, "sofas/premium-sofa-set-02": 0.68,
+    "sofas/premium-sofa-set-03": 0.61, "sofas/l-shape-sofa-set-01": 0.50,
+    "sofas/chesterfield-sofa-set-01": 0.62, "sofas/chesterfield-sofa-3-seater-01": 0.47,
+    "sofas/kids-sofa-01": 0.58, "sofas/recliner-sofa-03": 0.55,
+    "dining/premium-marble-dining-table-01": 0.63, "dining/teakwood-dining-table-01": 0.69,
+}
+# Client-supplied photos that need a crop (watermarked as usual).
+FOCUS = {"deewan/premium-teakwood-deewan-01": 0.5}
+
+
+def crop_43(img, focus):
+    w, h = img.size
+    if abs(w / h - 4 / 3) < 0.01:
+        return img
+    if w / h > 4 / 3:                      # too wide: crop left/right
+        cw = round(h * 4 / 3); left = min(max(round(focus * w - cw / 2), 0), w - cw)
+        return img.crop((left, 0, left + cw, h))
+    ch = round(w * 3 / 4); top = min(max(round(focus * h - ch / 2), 0), h - ch)
+    return img.crop((0, top, w, top + ch))
 QUALITY = 82
 
 
@@ -68,7 +96,13 @@ def main():
         out = (OUT / rel).with_suffix(".webp")
         out.parent.mkdir(parents=True, exist_ok=True)
         img = Image.open(src).convert("RGB")
-        if mark and rel.parts[0] not in SKIP_DIRS:
+        key = str(rel.with_suffix(""))
+        stamp = mark and rel.parts[0] not in SKIP_DIRS and key not in INSPIRATION
+        if key in INSPIRATION or key in FOCUS:
+            img = crop_43(img, INSPIRATION.get(key, FOCUS.get(key)))
+        if img.width > MAX_WIDTH:
+            img = img.resize((MAX_WIDTH, round(img.height * MAX_WIDTH / img.width)), Image.LANCZOS)
+        if stamp:
             img = draw_mark(img, *place(rel.name, img.size))
         if "favicon" in rel.name:
             img = img.resize((128, 128), Image.LANCZOS)

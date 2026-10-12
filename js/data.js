@@ -206,22 +206,18 @@ const DECENT_CARE_DATA = {
     },
     {
       id: "deewan",
-      title: "Bespoke Deewan",
-      subtitle: "With Storage",
-      image: "images/deewan/deewan-with-storage-01.webp",
-      description: "Grace your hallway or guest lounge with heritage Indian daybeds. Offers full length deep box storage for linens and blankets.",
+      title: "Premium Teakwood Deewan",
+      subtitle: "Carved Teakwood",
+      image: "images/deewan/premium-teakwood-deewan-01.webp",
+      description: "A premium teakwood deewan with carved detailing, floral upholstery and a matching bolster cushion, made to your size.",
       features: [
-        "Exemplary Indian heritage daybed layout styling",
-        "Full-box hydraulic compartments or elegant double drawer options",
-        "High-resiliency foam mattresses for dual seating & bedding comfort",
-        "Includes standard bolsters and matching throw cushions",
-        "Handcrafted in robust hardwoods or premium laminates"
+        "Teakwood frame with carved detailing",
+        "Upholstered seat and back with bolster cushion",
+        "Fully customized to your space"
       ],
       newlyLaunched: false,
       gallery: [
-        "images/deewan/deewan-with-storage-01.webp",
-        "images/deewan/deewan-design-01.webp",
-        "images/deewan/deewan-design-02.webp"
+        "images/deewan/premium-teakwood-deewan-01.webp"
       ]
     },
     {
